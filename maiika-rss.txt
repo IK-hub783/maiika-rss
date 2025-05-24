@@ -1,0 +1,6 @@
+maiika-rss/
+├── generate_rss.py
+├── requirements.txt
+└── .github/
+    └── workflows/
+        └── rss.yml
