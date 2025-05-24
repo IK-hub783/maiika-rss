@@ -24,6 +24,9 @@ jobs:
         run: |
           python3 maiika-rss/generate_rss.py
 
+      - name: Check RSS file before moving
+        run: ls -l maiika-rss/
+
       - name: Move RSS feed to root folder
         run: |
           mv maiika-rss/maiika_feed.xml ./maiika_feed.xml
