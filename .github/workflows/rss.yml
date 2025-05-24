@@ -24,7 +24,7 @@ jobs:
 
       - name: Run RSS feed generator
         run: |
-          generate_rss.py  # あなたのPythonスクリプト名に置き換えてください
+          python3 generate_rss.py  # あなたのPythonスクリプト名に置き換えてください
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
