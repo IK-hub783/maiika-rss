@@ -40,5 +40,6 @@ for article in articles:
     if pubDate:
         fe.pubDate(pubDate)
 
-fg.rss_file('maiika_feed.xml', encoding='utf-8')
+fg.rss_file('../maiika_feed.xml', encoding='utf-8')
+
 
