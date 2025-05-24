@@ -42,4 +42,5 @@ for article in soup.select('.blog-post-list li'):
         fe.pubDate(pubDate)
 
 # RSSフィードを書き出し
-fg.rss_file('maiika_feed.xml')
+fg.rss_file('maiika-rss/maiika_feed.xml', encoding='utf-8')
+
