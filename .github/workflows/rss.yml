@@ -1,0 +1,33 @@
+name: Generate and Deploy RSS Feed
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 毎日0時に実行
+  workflow_dispatch:      # 手動トリガーも可能
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 feedgen
+
+      - name: Run RSS feed generator
+        run: |
+          generate_rss.py  # あなたのPythonスクリプト名に置き換えてください
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # RSSファイルが出力されるディレクトリ
