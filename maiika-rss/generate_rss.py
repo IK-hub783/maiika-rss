@@ -20,6 +20,8 @@ fg.language('ja')
 # 記事ブロックを探してパース
 for article in soup.select('.blog-post-list li'):
     title_tag = article.find('a')
+    print("DEBUG TITLE:", title_tag)  # ← ここ追加
+
     if not title_tag:
         continue
 
